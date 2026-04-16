@@ -1,7 +1,7 @@
 ---
 name: general_print_invoice_ocr
 description: 支持通用机打发票识别。
-version: 1.0.2
+version: 1.0.3
 author: SCNet
 license: MIT
 tags:
@@ -11,7 +11,8 @@ tags:
   - 文字提取
 required_env_vars:
   - SCNET_API_KEY
-  - SCNET_API_BASE  # 可选，但有默认值
+optional_env_vars:
+  - SCNET_API_BASE
 primary_credential: SCNET_API_KEY
 dependencies:
   - python3
@@ -86,9 +87,8 @@ Token 过期后调用会返回 401 或 403 错误。更新方法：重新申请 
 
 用户可以说：
 
-- “帮我识别这张身份证，图片在 /Users/name/Downloads/id.jpg”
-- “提取这张发票的信息，路径是 /Users/name/Downloads/fapiao.png”
-- “OCR 这个图片里的文字，图片在 /Users/name/Desktop/text.png”
+- “帮我识别这张通用机打发票，图片在 /Users/name/Downloads/id.jpg”
+
 
 AI 会根据 description 中的关键词自动触发本技能。
 
